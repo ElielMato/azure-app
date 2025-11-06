@@ -6,14 +6,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Handle Azure CLI command for different platforms
 def get_az_command():
     if platform.system() == "Windows":
         return "az.cmd"
     return "az"
 
 AZ_CMD = get_az_command()
-
 
 parameters = {
     "resource_group": os.getenv("RESOURCE_GROUP"),
